@@ -1,0 +1,231 @@
+@import '../../../assets/styles/variables.scss';
+
+.credentials-panel {
+  display: flex;
+  height: 650px;
+  width: 1150px;
+  border-radius: 10px;
+  background: $color-white;
+
+  .welcome {
+    background: $color-primary;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 33%;
+    border-radius: 10px 5px 5px 10px;
+    padding: $padding-md;
+    transition: transform 0.5s ease-in-out;
+
+    .welcome-title h2 {
+      font-size: $font-large;
+      margin-bottom: $margin-lg;
+    }
+
+    .welcome-message {
+      font-size: $font-medium;
+      font-weight: 200;
+      margin-bottom: $margin-lg;
+    }
+
+    .welcome-button {
+      margin-top: 5rem;
+      padding: 1rem 2.75rem;
+
+      a {
+        background-color: inherit;
+        padding: inherit;
+        border: 1px solid $color-white;
+        border-radius: 100px;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        transition: 0.3s;
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .credentials-form {
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+
+    .title h2 {
+      font-size: $font-xlarge;
+      color: $color-primary;
+      text-align: center;
+    }
+
+    .login-alternative,
+    .register-alternative {
+      text-align: center;
+      font-size: small;
+      margin: 0.5rem 0;
+      color: $color-icon
+    }
+
+    .social-login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+
+      a {
+        padding: 1rem 1.25rem;
+        margin: 1rem;
+        border-radius: 50%;
+        font-size: larger;
+        border: 1px solid $color-primary;
+        color: black;
+
+        &:hover {
+          transform: scale(1.2);
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+
+    .forgot-password {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+
+      a {
+        font-size: 14px;
+        text-decoration: none;
+        color: black;
+        background: var(--color-white);
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid var(--color-border-gray);
+
+        &:hover {
+          cursor: pointer;
+          background: var(--color-border-light-gray);
+          transition: 0.2s;
+        }
+      }
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      margin-top: 3.5rem;
+
+      button {
+        background: $color-primary;
+        border: none;
+        padding: 0.75rem 3.5rem;
+        border-radius: 5px;
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 17px;
+
+        &:hover {
+          opacity: 0.9;
+          transition: 0.2s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+.sa-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+}
+
+.sa-input i {
+  position: absolute;
+  text-align: center;
+  margin: 0 0.5rem;
+  color: $color-icon;
+}
+
+.sa-input input {
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 350px;
+  height: 45px;
+  background: $color-border-light-gray;
+}
+
+.sa-input input:focus {
+  border: 1px solid $color-primary;
+  background: $color-white;
+}
+
+.error {
+  color: red;
+  margin-top: 0.25rem;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+/* HELPER CLASSES - Add on Runtime to create animations */
+
+/* RESPONSIVE view */
+
+@media only screen and (max-width: 600px) {
+  * {
+    overflow: hidden;
+  }
+
+  .credentials-panel {
+    height: auto;
+    width: auto;
+    flex-direction: column;
+
+    .welcome {
+      max-width: unset;
+      width: 100%;
+      border-radius: 5px 5px 10px 10px;
+
+      .welcome-button {
+        position: relative;
+        padding: 0.5rem 1.75rem;
+      }
+    }
+  }
+
+  .social-login a {
+    padding: 1rem 1.25rem;
+    margin: 0.5rem;
+    font-size: large;
+  }
+
+  .sa-input input {
+    width: auto;
+  }
+
+  .button-group {
+    margin-top: 2.5rem;
+
+    button {
+      padding: 0.75rem 2.5rem;
+      font-size: 14px;
+      margin-bottom: 1rem;
+    }
+  }
+}
